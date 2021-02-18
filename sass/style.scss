@@ -1054,3 +1054,18 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
+// Blink
+#fh5co-home .text-inner h1 span.to-blink {
+	color: #fff;
+}
+
+.to-blink {
+	animation: blinker 1.5s linear infinite;
+}
+  
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
