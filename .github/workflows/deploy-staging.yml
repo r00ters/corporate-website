@@ -21,9 +21,11 @@ jobs:
           User-agent: *
           Disallow: /
           EOL
-      - name: Deploy documentation
+      - name: Deploy site
         if: success()
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           target_branch: gh-pages
           build_dir: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
