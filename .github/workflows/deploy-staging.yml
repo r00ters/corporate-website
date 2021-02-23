@@ -23,11 +23,6 @@ jobs:
           Disallow: /
           EOL
 
-      - name: AAA
-        run: |
-          ls -lah 
-          ls -lah build/
-
       - name: Deploy site
         if: success() && env.GH_PAT != ''
         uses: JamesIves/github-pages-deploy-action@4.0.0
@@ -35,11 +30,12 @@ jobs:
           repository-name: r00ters/r00ters.github.io
           branch: main
           folder: build
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ env.GH_PAT }}
           single-commit: true
           clean: true
           clean-exclude: |
             README*
             .git*
             sass
-
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
