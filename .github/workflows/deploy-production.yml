@@ -1,0 +1,37 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-production:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.3.4
+        with:
+          path: .
+
+      - name: Clean up
+        run: |
+          rm -rf README*
+          rm -rf .git*
+          rm -rf sass
+
+      - name: Deploy site
+        if: success() && env.AWS_ACCESS_KEY_ID != '' && env.AWS_SECRET_ACCESS_KEY != ''
+        uses: reggionick/s3-deploy@v3.1.0
+        with:
+          folder: .
+          bucket: ${{ secrets.S3_BUCKET }}
+          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          invalidation: /
+          delete-removed: true
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
