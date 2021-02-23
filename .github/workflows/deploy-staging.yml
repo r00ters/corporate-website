@@ -6,7 +6,7 @@ on:
       - staging
 
 jobs:
-  deploy:
+  deploy-staging:
 
     runs-on: ubuntu-latest
 
@@ -30,6 +30,8 @@ jobs:
           repository-name: r00ters/r00ters.github.io
           branch: main
           folder: .
+          git-config-name: ci-cd
+          git-config-email: tech@rooters.it
           token: ${{ env.GH_PAT }}
           single-commit: true
           clean: true
