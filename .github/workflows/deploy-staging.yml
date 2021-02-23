@@ -14,11 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2.3.4
         with:
-          path: build
+          path: .
 
       - name: Generate robots.txt
         run: |
-          cat > build/robots.txt <<EOL
+          cat > robots.txt <<EOL
           User-agent: *
           Disallow: /
           EOL
@@ -29,7 +29,7 @@ jobs:
         with:
           repository-name: r00ters/r00ters.github.io
           branch: main
-          folder: build
+          folder: .
           token: ${{ env.GH_PAT }}
           single-commit: true
           clean: true
