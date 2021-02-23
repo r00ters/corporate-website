@@ -25,6 +25,7 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
+          repository: r00ters.github.io
           target_branch: gh-pages
           build_dir: ./
         env:
