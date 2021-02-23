@@ -24,7 +24,7 @@ jobs:
           EOL
 
       - name: Deploy site
-        if: success()
+        if: success() && env.GH_PAT != ''
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           repo: r00ters/r00ters.github.io
