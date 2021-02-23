@@ -27,9 +27,9 @@ jobs:
         uses: reggionick/s3-deploy@v3.1.0
         with:
           folder: .
-          bucket: ${{ secrets.S3_BUCKET }}
-          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          bucket: www.rooters.it
+          bucket-region: eu-north-1
+          dist-id: E2AIKL71VMQ0PO
           invalidation: /
           delete-removed: true
         env:
