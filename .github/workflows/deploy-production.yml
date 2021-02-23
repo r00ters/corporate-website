@@ -24,7 +24,7 @@ jobs:
 
       - name: Deploy site
         if: success() && env.AWS_ACCESS_KEY_ID != '' && env.AWS_SECRET_ACCESS_KEY != ''
-        uses: reggionick/s3-deploy@v3.1.0
+        uses: siddolo/s3-deploy@v3.1.0
         with:
           folder: .
           bucket: www.rooters.it
