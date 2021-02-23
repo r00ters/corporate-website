@@ -29,8 +29,6 @@ jobs:
           folder: .
           bucket: www.rooters.it
           bucket-region: eu-north-1
-          dist-id: E2AIKL71VMQ0PO
-          invalidation: /
           delete-removed: true
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
