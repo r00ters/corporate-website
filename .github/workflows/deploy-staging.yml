@@ -24,7 +24,7 @@ jobs:
           EOL
 
       - name: Change URL to staging location
-        run: sed -i index.html 's|https://www.rooters.it|https://r00ters.github.io|g'
+        run: sed -i 's|https://www.rooters.it|https://r00ters.github.io|g' index.html 
 
       - name: Deploy site
         if: success() && env.GH_PAT != ''
