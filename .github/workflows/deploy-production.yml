@@ -18,15 +18,14 @@ jobs:
 
       - name: Clean up
         run: |
-          rm -rf README*
-          rm -rf .git*
-          rm -rf sass
+          rm -rf src/README*
+          rm -rf src/sass
 
       - name: Deploy site
         if: success() && env.AWS_ACCESS_KEY_ID != '' && env.AWS_SECRET_ACCESS_KEY != ''
         uses: siddolo/s3-deploy@hidden-files
         with:
-          folder: .
+          folder: ./src/
           bucket: www.rooters.it
           bucket-region: eu-north-1
           private: true
