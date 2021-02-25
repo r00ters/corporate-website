@@ -18,10 +18,13 @@ jobs:
 
       - name: Generate robots.txt
         run: |
-          cat > robots.txt <<EOL
+          cat > src/robots.txt <<EOL
           User-agent: *
           Disallow: /
           EOL
+
+      - name: Change URL to staging location
+        run: sed -i 's|https://www.rooters.it|https://r00ters.github.io|g' src/index.html 
 
       - name: Deploy site
         if: success() && env.GH_PAT != ''
@@ -29,7 +32,7 @@ jobs:
         with:
           repository-name: r00ters/r00ters.github.io
           branch: main
-          folder: .
+          folder: ./src/
           git-config-name: ci-cd
           git-config-email: tech@rooters.it
           token: ${{ env.GH_PAT }}
@@ -37,7 +40,6 @@ jobs:
           clean: true
           clean-exclude: |
             README*
-            .git*
             sass
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
