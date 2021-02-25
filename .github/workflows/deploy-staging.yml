@@ -23,6 +23,9 @@ jobs:
           Disallow: /
           EOL
 
+      - name: Change URL to staging location
+        run: sed -i index.html 's|https://www.rooters.it|https://r00ters.github.io|g'
+
       - name: Deploy site
         if: success() && env.GH_PAT != ''
         uses: JamesIves/github-pages-deploy-action@4.0.0
