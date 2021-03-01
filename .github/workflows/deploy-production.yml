@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy-production:
+  deploy:
 
     runs-on: ubuntu-latest
 

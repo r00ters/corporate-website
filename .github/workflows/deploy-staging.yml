@@ -6,7 +6,7 @@ on:
       - staging
 
 jobs:
-  deploy-staging:
+  deploy:
 
     runs-on: ubuntu-latest
 
@@ -43,3 +43,21 @@ jobs:
             sass
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
+
+  slack-workflow-status:
+    if: always()
+    name: Post Workflow Status To Slack
+    needs:
+      - deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Workflow Notification
+        uses: Gamesight/slack-workflow-status@master
+        with:
+          repo_token: ${{secrets.GH_PAT}}
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+          # Optional Input
+          channel: '#cicd'
+          name: 'Rooters CI/CD Slack Bot'
+          icon_emoji: ':poop:'
+          icon_url: 'https://avatars.githubusercontent.com/u/78053076?s=200&v=4'
