@@ -7,9 +7,7 @@ on:
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.3.4
@@ -56,8 +54,3 @@ jobs:
         with:
           repo_token: ${{secrets.GH_PAT}}
           slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
-          # Optional Input
-          channel: '#cicd'
-          name: 'Rooters CI/CD Slack Bot'
-          icon_emoji: ':poop:'
-          icon_url: 'https://avatars.githubusercontent.com/u/78053076?s=200&v=4'
