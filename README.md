@@ -3,7 +3,9 @@
 https://www.rooters.it
 
 
-## Workflow triggers
+## CI/CD setup
+
+### Workflow triggers
 
 | Branch | Trigger | Action |
 | - | - | - |
@@ -11,7 +13,7 @@ https://www.rooters.it
 | main | push | Deploy to staging |
 
 
-## Actions secrets
+### Actions secrets
 
 Set these [secrets](/settings/secrets/actions) in order to enable CI/CD workflow on [GitHub Action](/actions)
 
