@@ -5,7 +5,7 @@ https://www.rooters.it
 
 ## Workflow triggers
 
-| Branch | Action | What |
+| Branch | Trigger | Action |
 | - | - | - |
 | staging | push | Deploy to staging |
 | main | push | Deploy to staging |
