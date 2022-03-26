@@ -1,1 +1,20 @@
-.vscode
+# Libs
+node_modules/
+
+# Local Build
+public/
+
+# Environment variable
+.env
+
+# Log
+npm-debug.log
+yarn-error.log
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+Thumbs.db
