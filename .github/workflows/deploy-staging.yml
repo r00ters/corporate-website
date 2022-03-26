@@ -30,7 +30,6 @@ jobs:
           git-config-name: ci-cd
           git-config-email: tech@rooters.it
           access-token: ${{ env.GH_PAT }}
-          single-commit: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
 
