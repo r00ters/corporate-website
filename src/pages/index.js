@@ -93,7 +93,7 @@ Join us and watch your business grow. No effort, no worries.
                 </a>
               </li>
               <li>
-                <a href="#" className="icon brands fa-linkedin-in">
+                <a href="https://www.linkedin.com/company/rooters-it" className="icon brands fa-linkedin-in">
                   <span className="label">LinkedIn</span>
                 </a>
               </li>
