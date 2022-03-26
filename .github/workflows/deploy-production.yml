@@ -14,16 +14,28 @@ jobs:
         with:
           path: .
 
-      - name: Clean up
-        run: |
-          rm -rf src/README*
-          rm -rf src/sass
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli@4.10.2
+
+      - name: Build
+        run: gatsby build
+
+      - name: Verify build
+        run: ls -la public
 
       - name: Deploy site
         if: success() && env.AWS_ACCESS_KEY_ID != '' && env.AWS_SECRET_ACCESS_KEY != ''
         uses: siddolo/s3-deploy@hidden-files
         with:
-          folder: ./src/
+          folder: ./public/
           bucket: www.rooters.it
           bucket-region: eu-north-1
           private: true
