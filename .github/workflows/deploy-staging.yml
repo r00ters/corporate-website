@@ -23,7 +23,7 @@ jobs:
 
       - name: Deploy site
         if: success() && env.GH_PAT != ''
-        uses: enriikke/gatsby-gh-pages-action@v2
+        uses: enriikke/gatsby-gh-pages-action@v2.2.0
         with:
           deploy-repo: r00ters/r00ters.github.io
           deploy-branch: main
