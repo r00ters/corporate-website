@@ -218,8 +218,18 @@
 		}
 	}
 
-	header, header *, footer, footer * {
+	header, header * {
 		color: _palette(header-fg);
+	}
+
+	footer, footer * {
+		color: _palette(header-fg);
+	}
+
+	@include breakpoint('<=medium') {
+		footer, footer * {
+			color: _palette(fg);
+		}
 	}
 
 	.quote {
