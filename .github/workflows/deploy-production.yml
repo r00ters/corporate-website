@@ -6,26 +6,36 @@ on:
       - main
 
 jobs:
-  deploy-production:
-
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.3.4
         with:
           path: .
 
-      - name: Clean up
-        run: |
-          rm -rf src/README*
-          rm -rf src/sass
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli@4.10.2
+
+      - name: Build
+        run: gatsby build
+
+      - name: Verify build
+        run: ls -la public
 
       - name: Deploy site
         if: success() && env.AWS_ACCESS_KEY_ID != '' && env.AWS_SECRET_ACCESS_KEY != ''
         uses: siddolo/s3-deploy@hidden-files
         with:
-          folder: ./src/
+          folder: ./public/
           bucket: www.rooters.it
           bucket-region: eu-north-1
           private: true
@@ -35,3 +45,16 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  slack-workflow-status:
+    if: always()
+    name: Post Workflow Status To Slack
+    needs:
+      - deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Workflow Notification
+        uses: Gamesight/slack-workflow-status@master
+        with:
+          repo_token: ${{secrets.GH_PAT}}
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}

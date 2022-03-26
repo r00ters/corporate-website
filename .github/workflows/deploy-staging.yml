@@ -6,10 +6,8 @@ on:
       - staging
 
 jobs:
-  deploy-staging:
-
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.3.4
@@ -18,13 +16,27 @@ jobs:
 
       - name: Generate robots.txt
         run: |
-          cat > src/robots.txt <<EOL
+          cat > static/robots.txt <<EOL
           User-agent: *
           Disallow: /
           EOL
 
-      - name: Change URL to staging location
-        run: sed -i 's|https://www.rooters.it|https://r00ters.github.io|g' src/index.html 
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli@4.10.2
+
+      - name: Build
+        run: gatsby build
+      
+      - name: Verify build
+        run: ls -la public
 
       - name: Deploy site
         if: success() && env.GH_PAT != ''
@@ -32,14 +44,23 @@ jobs:
         with:
           repository-name: r00ters/r00ters.github.io
           branch: main
-          folder: ./src/
+          folder: ./public/
           git-config-name: ci-cd
           git-config-email: tech@rooters.it
           token: ${{ env.GH_PAT }}
           single-commit: true
-          clean: true
-          clean-exclude: |
-            README*
-            sass
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
+
+  slack-workflow-status:
+    if: always()
+    name: Post Workflow Status To Slack
+    needs:
+      - deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Workflow Notification
+        uses: Gamesight/slack-workflow-status@master
+        with:
+          repo_token: ${{secrets.GH_PAT}}
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
