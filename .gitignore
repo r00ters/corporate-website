@@ -3,6 +3,7 @@ node_modules/
 
 # Local Build
 public/
+.cache
 
 # Environment variable
 .env

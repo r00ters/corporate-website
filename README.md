@@ -2,6 +2,9 @@
 
 https://www.rooters.it
 
+## Local development
+
+Run `gatsby develop` in the terminal to start the dev site on http://localhost:8000.
 
 ## CI/CD setup
 

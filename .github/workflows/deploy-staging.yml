@@ -16,29 +16,21 @@ jobs:
 
       - name: Generate robots.txt
         run: |
-          cat > src/robots.txt <<EOL
+          cat > static/robots.txt <<EOL
           User-agent: *
           Disallow: /
           EOL
 
-      - name: Change URL to staging location
-        run: sed -i 's|https://www.rooters.it|https://r00ters.github.io|g' src/index.html 
-
       - name: Deploy site
         if: success() && env.GH_PAT != ''
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+        uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          repository-name: r00ters/r00ters.github.io
-          branch: main
-          folder: ./src/
+          deploy-repo: r00ters/r00ters.github.io
+          deploy-branch: main
           git-config-name: ci-cd
           git-config-email: tech@rooters.it
           token: ${{ env.GH_PAT }}
           single-commit: true
-          clean: true
-          clean-exclude: |
-            README*
-            sass
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
 
