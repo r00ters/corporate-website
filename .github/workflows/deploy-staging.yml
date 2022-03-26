@@ -29,7 +29,7 @@ jobs:
           deploy-branch: main
           git-config-name: ci-cd
           git-config-email: tech@rooters.it
-          token: ${{ env.GH_PAT }}
+          access-token: ${{ env.GH_PAT }}
           single-commit: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
