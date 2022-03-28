@@ -238,8 +238,10 @@
 			top: 0;
 		}
 
-		.intro header img {
-			width: 70% !important;
+		.intro header * {
+			margin-top: 1rem;
+			max-width: 16rem !important;
+			max-height: 7rem !important;
 		}
 	}
 

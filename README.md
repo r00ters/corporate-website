@@ -13,7 +13,7 @@ Run `gatsby develop` in the terminal to start the dev site on http://localhost:8
 | Branch | Trigger | Action |
 | - | - | - |
 | staging | push | Deploy to staging |
-| main | push | Deploy to staging |
+| main | push | Deploy to production |
 
 
 ### Actions secrets

@@ -35,7 +35,7 @@ const IndexPage = () => (
         </p>
         <ul className="feature-icons">
           <li className="icon solid fa-laptop">Hardware & Software distribution</li>
-          <li className="icon solid fa-signal">Hardware & Cloud infrastructure</li>
+          <li className="icon solid fa-signal">On-Premises & Cloud solutions</li>
           <li className="icon solid fa-bolt">Data recovery & Secure delete</li>
           <li className="icon solid fa-cog">Security & Compliance</li>
           <li className="icon solid fa-map-marker-alt">Remote & On-site support</li>
