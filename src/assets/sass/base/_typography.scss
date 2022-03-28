@@ -230,6 +230,17 @@
 		footer, footer * {
 			color: _palette(fg);
 		}
+
+		.intro header {
+			position: absolute;
+			z-index: 99;
+			background: transparent !important;
+			top: 0;
+		}
+
+		.intro header img {
+			width: 70% !important;
+		}
 	}
 
 	.quote {
