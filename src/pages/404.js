@@ -1,10 +1,24 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Footer from '../components/Footer'
+import Copyright from '../components/Copyright'
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <section>
+      <header>
+        <h2>404</h2>
+      </header>
+      <div className="content">
+        <p  className="quote">
+          You just hit a route that doesn't exist :(
+        </p>
+        <p><button><a href="/">Return to the right path</a></button></p>
+      </div>
+      <Footer />
+    </section>
+
+    <Copyright />
   </Layout>
 )
 
