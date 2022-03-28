@@ -10,7 +10,13 @@ const Layout = ({ children }) => (
       query SiteTitleQuery {
         site {
           siteMetadata {
-            title
+            title,
+            description,
+            keyword,
+            og_image,
+            og_image_width,
+            og_image_height,
+            domain
           }
         }
       }
@@ -20,8 +26,11 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: data.site.siteMetadata.description },
+            { name: 'keywords', content: data.site.siteMetadata.keyword },
+            { name: 'og:image', content: data.site.siteMetadata.domain + data.site.siteMetadata.og_image },
+            { name: 'og:image:width', content: data.site.siteMetadata.og_image_width },
+            { name: 'og:image:heigh', content: data.site.siteMetadata.og_image_height },
           ]}
         >
           <html lang="en" />

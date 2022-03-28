@@ -33,7 +33,7 @@ jobs:
         run: npm install -g gatsby-cli@4.10.2
 
       - name: Build
-        run: gatsby build
+        run: STAGING=true gatsby build
       
       - name: Verify build
         run: ls -la public
