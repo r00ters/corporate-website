@@ -63,7 +63,7 @@ module.exports = {
         // Defaults to false
         enableWebVitalsTracking: true,
         // Defaults to https://www.googletagmanager.com
-        selfHostedOrigin: process.env.GATSBY_DOMAIN,
+        // selfHostedOrigin: process.env.GATSBY_DOMAIN,
       }
     }
   ],
