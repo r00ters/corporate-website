@@ -10,32 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v4
         with:
           path: .
 
-      - name: Install Node.js
-        uses: actions/setup-node@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: '20.x'
+          cache: 'npm'
 
-      - name: Install Project Dependencies
-        run: npm ci
+      - name: Install project dependencies
+        run: npm install
 
-      - name: Install Gatsby CLI
-        run: npm install -g gatsby-cli@4.11.0
+      - name: Build Next.js (static export)
+        run: |
+          npm run build
 
-      - name: Build
-        run: gatsby build
-
-      - name: Verify build
-        run: ls -la public
+      - name: Verify static output
+        run: ls -la out
 
       - name: Deploy site
         if: success() && env.AWS_ACCESS_KEY_ID != '' && env.AWS_SECRET_ACCESS_KEY != ''
         uses: siddolo/s3-deploy@hidden-files
         with:
-          folder: ./public/
+          folder: ./out/
           bucket: www.rooters.it
           bucket-region: eu-north-1
           private: true
