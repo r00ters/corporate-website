@@ -22,6 +22,10 @@ jobs:
           Disallow: /
           EOL
 
+      - name: Generate .nojekyll (without it GitHub pages do not serve _* files)
+        run: |
+          touch .nojekyll
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
