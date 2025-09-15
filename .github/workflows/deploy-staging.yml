@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate .nojekyll (without it GitHub pages do not serve _* files)
         run: |
-          touch .nojekyll
+          touch public/.nojekyll
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
