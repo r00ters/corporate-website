@@ -22,6 +22,10 @@ jobs:
           Disallow: /
           EOL
 
+      - name: Generate .nojekyll (without it GitHub pages do not serve _* files)
+        run: |
+          touch .nojekyll
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -52,15 +56,18 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
 
-  slack-workflow-status:
+  telegram-workflow-status:
     if: always()
-    name: Post Workflow Status To Slack
+    name: Post Workflow Status To Telegram
     needs:
       - deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Slack Workflow Notification
-        uses: Gamesight/slack-workflow-status@master
-        with:
-          repo_token: ${{secrets.GH_PAT}}
-          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+      - name: Send Telegram Notification
+        run: |
+          STATUS=${{ job.status }}
+          MESSAGE="🚀 Workflow *${{ github.workflow }}* su *${{ github.repository }}* ha terminato con stato: *$STATUS* (job: ${{ github.job }})"
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+            -d parse_mode="Markdown" \
+            -d text="$MESSAGE"
