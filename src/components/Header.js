@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { Menu } from "lucide-react";
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -30,6 +31,13 @@ const NAVIGATION = [
 
 export default function Header() {
   const pathname = usePathname();
+  const toggleRef = useRef(null);
+
+  useEffect(() => {
+    if (toggleRef.current) {
+      toggleRef.current.checked = false;
+    }
+  }, [pathname]);
 
   const headerClassName = pathname === '/kb'
     ? 'container site-header is-fixed'
@@ -46,6 +54,7 @@ export default function Header() {
           id="menu-toggle"
           className="menu-checkbox"
           aria-label="Apri il menu"
+          ref={toggleRef}
         />
         <label htmlFor="menu-toggle" className="menu-toggle">
           <Menu aria-hidden="true" />
