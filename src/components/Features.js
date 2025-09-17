@@ -15,7 +15,7 @@ export default function Features() {
             <article>
                 <LucideIcons.ShieldAlert />
                 <h3>Cybersecurity</h3>
-                <p>Difendiamo i tuoi asset e gestiamo le vulnerabilità e le minacce in antcipo rispetto ad attori malevoli.</p>
+                <p>Difendiamo i tuoi asset e gestiamo le vulnerabilità e le minacce in anticipo rispetto ad attori malevoli.</p>
             </article>
             <article>
                 <LucideIcons.Landmark />
@@ -34,8 +34,8 @@ export default function Features() {
             </article>
             <article>
                 <LucideIcons.Brain />
-                <h3>IA &amp; Software Automation</h3>
-                <p>Implementiamo soluzioni basate sull'AI per ottimizzare i processi aziendali, riducendo errori e tempi di esecuzione.</p>
+                <h3>AI &amp; Software Automation</h3>
+                <p>Implementiamo soluzioni per ottimizzare i processi aziendali, anche con l'ausilio dell'intelligenza artificiale, per ridurre errori e tempi di esecuzione.</p>
             </article>
         </div>
     </section>
