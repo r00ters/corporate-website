@@ -1,9 +1,7 @@
-"use client"
-
-import Image from 'next/image';
 import Link from 'next/link';
-import { CircleCheckBig } from "lucide-react";
 import ContactForm from '@/components/ContactForm';
+
+export const dynamic = 'force-static';
 
 export default function ContactUs() {
 
@@ -19,7 +17,7 @@ export default function ContactUs() {
                 </nav>
             </header>
             <main className="page container full-width">
-                <div className="grid" if="contact-form">
+                <div className="grid" id="contact-form">
                     <ContactForm />
                 </div>
             </main>
