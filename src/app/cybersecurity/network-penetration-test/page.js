@@ -40,7 +40,7 @@ export default function PageNetworkPenetrationTest() {
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Cyber Security', href: '#' },
-                        { label: 'Network Penetration Test' },
+                        { label: 'NPT' },
                     ]}
                 />
             </header>

@@ -40,7 +40,7 @@ export default function PageMobileApplicationSecurityTesting() {
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Cyber Security', href: '#' },
-                        { label: 'Mobile Application Security Testing' },
+                        { label: 'MAST' },
                     ]}
                 />
             </header>

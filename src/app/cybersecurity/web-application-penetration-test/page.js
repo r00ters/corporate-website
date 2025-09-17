@@ -40,7 +40,7 @@ export default function PageWebApplicationPenetrationTest() {
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Cyber Security', href: '#' },
-                        { label: 'Web Application Penetration Test' },
+                        { label: 'WAPT' },
                     ]}
                 />
             </header>
