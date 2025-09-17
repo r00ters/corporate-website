@@ -132,7 +132,7 @@
     --pico-mark-background-color: var(--rooters-brand-color-claret);
     --pico-mark-gradient: linear-gradient(to right, rgb(215.4, 140.8, 210.2), rgb(184.5, 153, 237.75), rgb(156.6, 165.3, 232.6), rgb(142.75, 168.95, 240.05));
     --pico-muted-color: var(--rooters-brand-color-gray);
-    
+
     --pico-form-element-background-color: var(--rooters-brand-color-dark-gray);
     --pico-form-element-active-background-color: var(--pico-card-background-color);
     --pico-form-element-border-color: var(--rooters-brand-color-claret);
@@ -478,9 +478,32 @@ body>main.homepage {
     grid-area: text;
 }
 
-.keypoint article img {
+.keypoint article figure {
     grid-area: image;
+    background-position-y: center;
+    background-size: cover;
+    min-height: 15rem;
+    border-radius: 0.5rem;
 }
+
+.keypoint article figure.monitoring {
+    background-image: url("/img/monitoring.webp");
+}
+
+.keypoint article figure.security {
+    background-image: url("/img/security.webp");
+    background-position-y: top;
+}
+
+.keypoint article figure.technology {
+    background-image: url("/img/technology.webp");
+}
+
+.keypoint article figure.open-source {
+    background-image: url("/img/open-source.webp");
+    background-position-y: bottom;
+}
+
 
 body>main.homepage>.hero {
     display: grid;
@@ -968,11 +991,26 @@ body>footer .container section:last-of-type p {
     --pico-color: var(--rooters-brand-color-light-gray);
     background-color: var(--rooters-brand-color-dark-gray);
     padding: 0 var(--pico-nav-element-spacing-horizontal);
+    font-size: calc(var(--pico-font-size) * 0.7);
+    line-height: 0;
 }
 
 .page.header nav a {
     --pico-color: var(--rooters-brand-color-gray);
     --pico-underline: var(--rooters-brand-color-light-claret);
+}
+
+.page.header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--pico-spacing) * 0);
+    margin: 0;
+    padding: calc(var(--pico-spacing) * 0.25) 0;
+    list-style: none;
+}
+
+.page.header nav li {
+    color: inherit;
 }
 
 .page.header.vulnerability-assessment {
