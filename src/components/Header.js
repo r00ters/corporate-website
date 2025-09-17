@@ -16,15 +16,15 @@ const NAVIGATION = [
   //     { label: 'MailShield', href: '#' },
   //   ],
   // },
-  // {
-  //   label: 'Cybersecurity',
-  //   items: [
-  //     { label: 'Vulnerability Assessment', href: '/cybersecurity/vulnerability-assessment' },
-  //     { label: 'Network Penetration Test', href: '#' },
-  //     { label: 'Web Application Penetration Test', href: '#' },
-  //     { label: 'Mobile Application Security Testing', href: '#' },
-  //   ],
-  // },
+  {
+    label: 'Cybersecurity',
+    items: [
+      { label: 'Vulnerability Assessment', href: '/cybersecurity/vulnerability-assessment' },
+      { label: 'Network Penetration Test', href: '/cybersecurity/network-penetration-test' },
+      { label: 'Web Application Penetration Test', href: '/cybersecurity/web-application-penetration-test' },
+      { label: 'Mobile Application Security Testing', href: '/cybersecurity/mobile-application-security-testing' },
+    ],
+  },
   // { label: 'Blog', href: '#' },
   { label: 'Contatti', href: '/contact-us' },
 ];
@@ -71,7 +71,7 @@ export default function Header() {
                 {'items' in item ? (
                   <>
                     <details className="dropdown desktop">
-                      <summary className="contrast" aria-haspopup="true">
+                      <summary className="" aria-haspopup="true">
                         {item.label}
                       </summary>
                       <ul>
@@ -83,7 +83,7 @@ export default function Header() {
                       </ul>
                     </details>
                     <div className="dropdown mobile">
-                      <p className="contrast dropdown-label">{item.label}</p>
+                      <p className="dropdown-label">{item.label}</p>
                       <ul>
                         {item.items.map((subItem) => (
                           <li key={subItem.label}>
@@ -94,7 +94,7 @@ export default function Header() {
                     </div>
                   </>
                 ) : (
-                  <Link href={item.href} className="contrast">
+                  <Link href={item.href} className="">
                     {item.label}
                   </Link>
                 )}
