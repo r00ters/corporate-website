@@ -7,7 +7,7 @@ export default function Hero() {
             <div className="hook">
                 <h1><mark>Proteggi il tuo business</mark></h1>
                 <p className="secondary">Dalla sicurezza informatica all'integrazione tecnologica,
-                siamo il tuo alleato nel proteggere e ottimizzare
+                siamo il tuo alleato nel monitorare, proteggere e ottimizzare
                 il tuo ecosistema IT</p>
             </div>
         </section>
