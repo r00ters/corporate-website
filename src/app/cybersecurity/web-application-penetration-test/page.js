@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { CircleCheckBig } from "lucide-react";
 import Breadcrumb from '@/components/Breadcrumb';
 
-export default function PageVulnerabilityAssessment() {
+export default function PageWebApplicationPenetrationTest() {
     const assessmentSteps = [
-        "Analizziamo le vulnerabilità all'interno delle infrastrutture di rete, inclusi firewall, router e switch.",
-        "Identifichiamo le vulnerabilità nelle applicazioni web che possono essere sfruttate da attaccanti.",
-        "Valutiamo le vulnerabilità presenti nelle applicazioni mobile su piattaforme come Android e iOS.",
-        "Analizziamo le vulnerabilità nei database per non compromettere l'integrità e la riservatezza dei dati."
+        "Identifichiamo e classifichiamo le falle di sicurezza, come SQL Injection e Cross-Site Scripting, riducendo i rischi di attacco.",
+        "Eseguiamo test mirati per verificare la resistenza delle applicazioni contro exploit e tecniche di hacking avanzate.",
+        "Controlliamo le impostazioni di sicurezza di server e database per eliminare configurazioni errate e punti deboli.",
+        "Forniamo un'analisi dettagliata con soluzioni concrete per rafforzare la sicurezza delle tue applicazioni web."
     ];
 
     const certifications = [
@@ -34,21 +34,21 @@ export default function PageVulnerabilityAssessment() {
 
     return (
         <>
-            <header className="container-fluid page header vulnerability-assessment">
-                <h1><mark>Vulnerability Assessment</mark></h1>
+            <header className="container-fluid page header web-application-penetration-test">
+                <h1><mark>Web Application Penetration Test</mark></h1>
                 <Breadcrumb
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Cyber Security', href: '#' },
-                        { label: 'Vulnerability Assessment' },
+                        { label: 'Web Application Penetration Test' },
                     ]}
                 />
             </header>
             <main className="page container">
                 <div className="grid">
                     <article className="page-content">
-                        <h2>Difendiamo la tua azienda</h2>
-                        <p>Il Vulnerability Assessment è un processo sistematico volto a identificare, classificare e dare priorità alle vulnerabilità presenti nei sistemi informatici di un&rsquo;organizzazione. In partnership con ISGroup, e grazie alle nostre tecnologie avanzate, siamo in grado di fornire un quadro dettagliato della sicurezza aziendale e soluzioni mirate per rafforzarla.</p>
+                        <h2>Applicazioni web impenetrabili</h2>
+                        <p>Il Web Application Penetration Testing è un'attività svolta per identificare vulnerabilità nei siti e nelle applicazioni web. Con il nostro partner ISGroup, e grazie ai nostri professionisti qualificati, simuliamo attacchi reali per analizzare falle di sicurezza, proteggere i dati sensibili e rafforzare le difese della tua azienda contro le minacce informatiche.</p>
 
                         <section aria-labelledby="process">
                             <h3 id="process">Come funziona?</h3>

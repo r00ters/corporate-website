@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { CircleCheckBig } from "lucide-react";
 import Breadcrumb from '@/components/Breadcrumb';
 
-export default function PageVulnerabilityAssessment() {
+export default function PageMobileApplicationSecurityTesting() {
     const assessmentSteps = [
-        "Analizziamo le vulnerabilità all'interno delle infrastrutture di rete, inclusi firewall, router e switch.",
-        "Identifichiamo le vulnerabilità nelle applicazioni web che possono essere sfruttate da attaccanti.",
-        "Valutiamo le vulnerabilità presenti nelle applicazioni mobile su piattaforme come Android e iOS.",
-        "Analizziamo le vulnerabilità nei database per non compromettere l'integrità e la riservatezza dei dati."
+        "Analizziamo il codice sorgente per individuare vulnerabilità che potrebbero essere sfruttate da attaccanti.",
+        "Simuliamo attacchi con test di penetrazione per identificare e correggere debolezze dell'applicazione.",
+        "Verifichiamo le interazioni tra l'app e i server per garantire la protezione dei dati durante il trasferimento.",
+        "Analizziamo le librerie e i componenti di terze parti utilizzati nell'app per assicurare l'assenza di vulnerabilità."
     ];
 
     const certifications = [
@@ -34,21 +34,21 @@ export default function PageVulnerabilityAssessment() {
 
     return (
         <>
-            <header className="container-fluid page header vulnerability-assessment">
-                <h1><mark>Vulnerability Assessment</mark></h1>
+            <header className="container-fluid page header mobile-application-security-testing">
+                <h1><mark>Mobile Application Security Testing</mark></h1>
                 <Breadcrumb
                     items={[
                         { label: 'Home', href: '/' },
                         { label: 'Cyber Security', href: '#' },
-                        { label: 'Vulnerability Assessment' },
+                        { label: 'Mobile Application Security Testing' },
                     ]}
                 />
             </header>
             <main className="page container">
                 <div className="grid">
                     <article className="page-content">
-                        <h2>Difendiamo la tua azienda</h2>
-                        <p>Il Vulnerability Assessment è un processo sistematico volto a identificare, classificare e dare priorità alle vulnerabilità presenti nei sistemi informatici di un&rsquo;organizzazione. In partnership con ISGroup, e grazie alle nostre tecnologie avanzate, siamo in grado di fornire un quadro dettagliato della sicurezza aziendale e soluzioni mirate per rafforzarla.</p>
+                        <h2>Applicazioni mobile più sicure</h2>
+                        <p>Grazie alla nostra collaborazione con ISGroup, offriamo servizi di Mobile Application Security Testing per piattaforme iOS e Android. Questa attività identifica e risolve vulnerabilità nelle applicazioni sviluppate dalla tua azienda, garantendo la sicurezza dei dati e la fiducia degli utenti.</p>
 
                         <section aria-labelledby="process">
                             <h3 id="process">Come funziona?</h3>
