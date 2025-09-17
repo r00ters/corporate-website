@@ -132,10 +132,12 @@
     --pico-mark-background-color: var(--rooters-brand-color-claret);
     --pico-mark-gradient: linear-gradient(to right, rgb(215.4, 140.8, 210.2), rgb(184.5, 153, 237.75), rgb(156.6, 165.3, 232.6), rgb(142.75, 168.95, 240.05));
     --pico-muted-color: var(--rooters-brand-color-gray);
-    --pico-form-element-background-color: var(--pico-card-background-color);
+    
+    --pico-form-element-background-color: var(--rooters-brand-color-dark-gray);
     --pico-form-element-active-background-color: var(--pico-card-background-color);
-    --pico-form-element-active-border-color: var(--pico-background-color);
-    --pico-form-element-focus-color: var(--pico-background-color);
+    --pico-form-element-border-color: var(--rooters-brand-color-claret);
+    --pico-form-element-focus-color: var(--rooters-brand-color-light-claret);
+    --pico-form-element-active-border-color: var(--rooters-brand-color-light-gray)
 }
 
 body {
@@ -455,7 +457,7 @@ body>main.homepage {
     font-size: 0.9rem;
 }
 
-.keypoint article.textfirst {
+.keypoint article.text-first {
     display: grid;
     grid-column-gap: var(--pico-grid-column-gap);
     grid-row-gap: var(--pico-grid-row-gap);
@@ -463,7 +465,7 @@ body>main.homepage {
     grid-template-areas: "text image"
 }
 
-.keypoint article.imagefirst {
+.keypoint article.image-first {
     display: grid;
     grid-column-gap: var(--pico-grid-column-gap);
     grid-row-gap: var(--pico-grid-row-gap);
@@ -488,7 +490,10 @@ body>main.homepage>.hero {
     row-gap: calc(var(--pico-homepage-spacing-vertical)/ 4);
     justify-items: center;
     margin-bottom: calc(var(--pico-homepage-spacing-vertical) * 2.25);
+}
 
+.hero .arrow a {
+    color: var(--pico-contrast)
 }
 
 /* Mobile tweaks */
@@ -512,7 +517,7 @@ body>main.homepage>.hero {
         text-align: center;
     }
 
-    .keypoint article.textfirst {
+    .keypoint article.text-first {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -520,7 +525,7 @@ body>main.homepage>.hero {
             "image"
     }
 
-    .keypoint article.imagefirst {
+    .keypoint article.image-first {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -970,8 +975,12 @@ body>footer .container section:last-of-type p {
     --pico-underline: var(--rooters-brand-color-light-claret);
 }
 
-.page.header.va {
+.page.header.vulnerability-assessment {
     background-image: url("/img/va.png");
+}
+
+.page.header.contact-us {
+    background-image: url("/img/tunnel.jpg");
 }
 
 .page.container {
@@ -983,6 +992,11 @@ body>footer .container section:last-of-type p {
     grid-template-columns: 2fr 1fr;
     -moz-column-gap: var(--pico-homepage-spacing-horizontal);
     column-gap: var(--pico-homepage-spacing-horizontal);
+}
+
+.page.container.full-width .grid {
+    grid-template-columns: 1fr;
+    row-gap: calc(var(--pico-homepage-spacing-vertical) * 0.75);
 }
 
 @media (max-width: 992px) {
