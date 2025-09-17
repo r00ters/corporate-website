@@ -8,24 +8,24 @@ import Link from 'next/link';
 
 const NAVIGATION = [
   { label: 'Home', href: '/' },
-  {
-    label: 'Servizi',
-    items: [
-      { label: 'MSP', href: '#' },
-      { label: 'Backup 365', href: '#' },
-      { label: 'MailShield', href: '#' },
-    ],
-  },
-  {
-    label: 'Cybersecurity',
-    items: [
-      { label: 'Vulnerability Assessment', href: '/cybersecurity/vulnerability-assessment' },
-      { label: 'Network Penetration Test', href: '#' },
-      { label: 'Web Application Penetration Test', href: '#' },
-      { label: 'Mobile Application Security Testing', href: '#' },
-    ],
-  },
-  { label: 'Blog', href: '#' },
+  // {
+  //   label: 'Servizi',
+  //   items: [
+  //     { label: 'MSP', href: '#' },
+  //     { label: 'Backup 365', href: '#' },
+  //     { label: 'MailShield', href: '#' },
+  //   ],
+  // },
+  // {
+  //   label: 'Cybersecurity',
+  //   items: [
+  //     { label: 'Vulnerability Assessment', href: '/cybersecurity/vulnerability-assessment' },
+  //     { label: 'Network Penetration Test', href: '#' },
+  //     { label: 'Web Application Penetration Test', href: '#' },
+  //     { label: 'Mobile Application Security Testing', href: '#' },
+  //   ],
+  // },
+  // { label: 'Blog', href: '#' },
   { label: 'Contatti', href: '/contact-us' },
 ];
 
