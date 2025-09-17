@@ -25,6 +25,7 @@ const NAVIGATION = [
   //   ],
   // },
   // { label: 'Blog', href: '#' },
+  { label: 'Contatti', href: '/contact-us' },
 ];
 
 export default function Header() {
