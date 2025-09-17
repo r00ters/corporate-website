@@ -10,7 +10,7 @@ export default function Keypoint() {
                 <h3><LucideIcons.Activity /> <mark>Monitoraggio continuo</mark> degli asset</h3>
                 <p>Per rafforzare la protezione aziendale, è essenziale raccogliere dati e metriche dall'infrastruttura.
                     La centralizzazione della telemetria da endpoint e server consente maggiore visibilità e reattività,
-                    mentre lautomazione delle azioni operative ottimizza la gestione e riduce i rischi.
+                    mentre l'automazione delle azioni operative ottimizza la gestione e riduce i rischi.
                     Un approccio strategico che migliora la sicurezza e crea nuove opportunità di crescita.</p>
             </main>
             <img src="/img/monitoring.png" alt="Sicurezza informatica" />
