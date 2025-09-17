@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   // Export a fully static site for S3/Pages deploys
   output: 'export',
+  trailingSlash: true,
   images: {
     // Required for static export when using next/image
     unoptimized: true,
