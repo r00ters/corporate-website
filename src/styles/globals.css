@@ -495,15 +495,17 @@ body>main.homepage {
 
 .keypoint article figure.monitoring {
     background-image: url("/img/monitoring.webp");
+    background-position-y: center;
 }
 
 .keypoint article figure.security {
     background-image: url("/img/security.webp");
-    background-position-y: top;
+    background-position-y: center;
 }
 
 .keypoint article figure.technology {
     background-image: url("/img/technology.webp");
+    background-position-y: center;
 }
 
 .keypoint article figure.open-source {
