@@ -39,7 +39,7 @@ export default function PageWebApplicationPenetrationTest() {
                 <Breadcrumb
                     items={[
                         { label: 'Home', href: '/' },
-                        { label: 'Cyber Security', href: '#' },
+                        { label: 'Cybersecurity', href: '#' },
                         { label: 'WAPT' },
                     ]}
                 />
