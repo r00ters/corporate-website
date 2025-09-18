@@ -39,7 +39,7 @@ export default function PageMobileApplicationSecurityTesting() {
                 <Breadcrumb
                     items={[
                         { label: 'Home', href: '/' },
-                        { label: 'Cyber Security', href: '#' },
+                        { label: 'Cybersecurity', href: '#' },
                         { label: 'MAST' },
                     ]}
                 />
